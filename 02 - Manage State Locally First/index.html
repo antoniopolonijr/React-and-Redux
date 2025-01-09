@@ -46,7 +46,7 @@
               <h2>Type in a new Message:</h2>
               {/* Render an input, button, and ul below this line */}
               <input onChange={this.handleChange} value={this.state.input} />
-              <button onClick={this.submitMessage}>Create List</button>
+              <button onClick={this.submitMessage}>Submit!</button>
               <ul>
                 {this.state.messages.map((item, index) => (
                   <li key={index}>{item}</li>
