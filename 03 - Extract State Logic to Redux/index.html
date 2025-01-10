@@ -18,6 +18,26 @@
 
     <script type="text/babel">
       // Define ADD, addMessage(), messageReducer(), and store here:
+      const ADD = "ADD";
+
+      const messageReducer = (state = [], action) => {
+        switch (action.type) {
+          // Change code below this line
+          case ADD:
+            return state.concat([action.message]);
+          // Change code above this line
+          default:
+            return state;
+        }
+      };
+
+      const addMessage = (message) => {
+        // Change code below this line
+        return { type: ADD, message };
+        // Change code above this line
+      };
+
+      const store = Redux.createStore(messageReducer);
     </script>
     <!-- Extract State Logic to Redux
 
