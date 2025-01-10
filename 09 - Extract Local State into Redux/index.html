@@ -48,7 +48,6 @@
           super(props);
           this.state = {
             input: "",
-            messages: [],
           };
           this.handleChange = this.handleChange.bind(this);
           this.submitMessage = this.submitMessage.bind(this);
@@ -59,10 +58,10 @@
           });
         }
         submitMessage() {
-          this.setState((state) => ({
+          this.props.submitNewMessage(this.state.input);
+          this.setState({
             input: "",
-            messages: state.messages.concat(state.input),
-          }));
+          });
         }
         render() {
           return (
@@ -72,7 +71,7 @@
               <br />
               <button onClick={this.submitMessage}>Submit</button>
               <ul>
-                {this.state.messages.map((message, idx) => {
+                {this.props.messages.map((message, idx) => {
                   return <li key={idx}>{message}</li>;
                 })}
               </ul>
