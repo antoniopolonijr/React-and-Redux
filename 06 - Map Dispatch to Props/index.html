@@ -25,6 +25,13 @@
       };
 
       // Change code below this line
+      const mapDispatchToProps = (dispatch) => {
+        return {
+          submitNewMessage: (message) => {
+            dispatch(addMessage(message));
+          },
+        };
+      };
     </script>
     <!-- Map Dispatch to Props
 
