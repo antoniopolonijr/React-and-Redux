@@ -49,6 +49,15 @@
 
       const connect = ReactRedux.connect;
       // Change code below this line
+
+      const ConnectedComponent = connect(
+        mapStateToProps,
+        mapDispatchToProps
+      )(Presentational);
+
+      const container = document.getElementById("root");
+      const root = ReactDOM.createRoot(container);
+      root.render(<Presentational />);
     </script>
     <!-- Connect Redux to React
 
