@@ -86,8 +86,19 @@
 
       class AppWrapper extends React.Component {
         // Render the Provider below this line
+        render() {
+          return (
+            <Provider store={store}>
+              <DisplayMessages />
+            </Provider>
+          );
+        }
         // Change code above this line
       }
+
+      const container = document.getElementById("root");
+      const root = ReactDOM.createRoot(container);
+      root.render(<DisplayMessages />);
     </script>
     <!-- Use Provider to Connect Redux to React
 
